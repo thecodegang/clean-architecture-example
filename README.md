@@ -35,10 +35,10 @@ are also defined. The `UseCase` is an interface similar to the
 
 The `UseCaseExecutor` handles the execution of a `UseCase`. To do so, it has an
 `invoke` method that takes the following arguments:
-1. the use case that is to be executed
-2. the RequestDto
-3. a function that converts the RequestDto to a Request object (the input of the use case)
-4. a function that converts the Response object (the output of the use case) of the use case execution to a ResponseDto
+1. the `UseCase` that is to be executed
+2. the `RequestDto`
+3. a _mapper function_ that converts the `RequestDto` to a `Request` object (the input of the use case)
+4. a _mapper function_ that converts the `Response` object (the output of the use case) of the use case execution to a `ResponseDto`
 
 There are 3 more overloaded versions of the `invoke` method, which omit the input
 and/or the output of the `UseCaseExecutor`.
