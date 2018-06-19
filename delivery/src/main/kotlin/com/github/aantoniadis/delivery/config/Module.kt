@@ -1,7 +1,7 @@
 package com.github.aantoniadis.delivery.config
 
-import com.github.aantoniadis.dataproviders.db.jpa.repositories.DBProductRepository
-import com.github.aantoniadis.dataproviders.db.jpa.repositories.JpaProductRepository
+import com.github.aantoniadis.dataproviders.db.mongo.repositories.DBProductRepository
+import com.github.aantoniadis.dataproviders.db.mongo.repositories.MongoProductRepository
 import com.github.aantoniadis.delivery.rest.imp.ProductResourceImp
 import com.github.aantoniadis.delivery.usecases.core.UseCaseExecutor
 import com.github.aantoniadis.delivery.usecases.core.UseCaseExecutorImp
@@ -30,5 +30,5 @@ class Module {
     fun createProductUseCase(productRepository: ProductRepository) = CreateProductUseCase(productRepository)
 
     @Bean
-    fun productRepository(dbProductRepository: DBProductRepository) = JpaProductRepository(dbProductRepository)
+    fun productRepository(dbProductRepository: DBProductRepository) = MongoProductRepository(dbProductRepository)
 }

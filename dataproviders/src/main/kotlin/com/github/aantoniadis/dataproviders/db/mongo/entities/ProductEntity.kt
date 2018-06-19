@@ -1,17 +1,17 @@
-package com.github.aantoniadis.dataproviders.db.jpa.entities
+package com.github.aantoniadis.dataproviders.db.mongo.entities
 
 import com.github.aantoniadis.core.entities.Product
 import com.github.aantoniadis.core.entities.ProductCode
+import com.github.aantoniadis.dataproviders.db.mongo.entities.annotations.Entity
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
 
 @Entity
-@Table(name = "products")
+@Document
 data class ProductEntity(
     @Id
     val code: String,

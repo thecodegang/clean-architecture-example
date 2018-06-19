@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication(scanBasePackages = [
     "com.github.aantoniadis.delivery.config",
-    "com.github.aantoniadis.dataproviders.db.jpa.config",
+    "com.github.aantoniadis.dataproviders.db.mongo.config",
     "com.github.aantoniadis.delivery.rest.imp"
 ])
 class App

@@ -1,4 +1,4 @@
-package com.github.aantoniadis.dataproviders.db.jpa.repositories
+package com.github.aantoniadis.dataproviders.db.mongo.repositories
 
 import java.util.*
 
