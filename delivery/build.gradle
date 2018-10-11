@@ -1,0 +1,18 @@
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile project(':core')
+    compile project(':usecases')
+    compile project(':dataproviders')
+
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-web"
+
+    // Test Dependencies
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
+
+bootJar { enabled = true }
+jar { enabled = false }
