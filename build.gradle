@@ -1,0 +1,62 @@
+buildscript {
+	ext {
+		kotlinVersion = '1.2.51'
+		springBootVersion = '2.0.5.RELEASE'
+		mockitoKotlinKTVersion = '1.6.0'
+	}
+	repositories {
+		mavenCentral()
+		maven { url 'https://plugins.gradle.org/m2/' }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+	}
+}
+
+apply plugin: 'java'
+
+group = 'com.github.aantoniadis'
+version = '0.0.1-SNAPSHOT'
+
+allprojects {
+	repositories {
+		jcenter()
+		mavenCentral()
+	}
+}
+
+subprojects {
+	apply plugin: 'kotlin'
+
+	repositories {
+		jcenter()
+		mavenCentral()
+	}
+
+	dependencies {
+		// Kotlin
+		compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
+		compile "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
+
+		testCompile "com.nhaarman:mockito-kotlin-kt1.1:$mockitoKotlinKTVersion"
+		testCompile "org.jetbrains.kotlin:kotlin-test"
+		testCompile "org.mockito:mockito-core"
+	}
+
+	sourceCompatibility = 1.8
+	compileKotlin {
+		kotlinOptions {
+			freeCompilerArgs = ["-Xjsr305=strict"]
+			jvmTarget = "1.8"
+		}
+	}
+	compileTestKotlin {
+		kotlinOptions {
+			freeCompilerArgs = ["-Xjsr305=strict"]
+			jvmTarget = "1.8"
+		}
+	}
+}

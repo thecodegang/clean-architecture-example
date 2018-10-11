@@ -2,11 +2,11 @@
 
 # Compile and run the app
 
-`./mvnw package && ./mvnw spring-boot:run -pl delivery`
+`./gradlew delivery:bootRun`
 
 or
 
-`./mvnw package && java -jar delivery/target/delivery-1.0.0-SNAPSHOT.jar`
+`./gradlew build && java -jar delivery/build/libs/delivery.jar`
 
 # Description of the architecture
 
